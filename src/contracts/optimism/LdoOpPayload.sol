@@ -17,22 +17,13 @@
      defijesus.eth
 */
 
-pragma solidity ^0.8.16;
+pragma solidity 0.8.16;
 
 import 'forge-std/Test.sol';
 
 import {AaveV3Optimism} from 'aave-address-book/AaveV3Optimism.sol';
 import {IProposalGenericExecutor} from 'aave-helpers/interfaces/IProposalGenericExecutor.sol';
-
-interface IEmissionManager {
-   /**
-   * @dev Updates the admin of the reward emission
-   * @dev Only callable by the owner of the EmissionManager
-   * @param reward The address of the reward token
-   * @param admin The address of the new admin of the emission
-   */
-  function setEmissionAdmin(address reward, address admin) external;
-}
+import {IEmissionManager} from 'aave-v3-periphery/rewards/interfaces/IEmissionManager.sol';
 
 /**
  * @title ChangeLdoEmissionAdminPayload
