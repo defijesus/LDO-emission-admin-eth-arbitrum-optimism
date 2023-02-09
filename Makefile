@@ -37,6 +37,11 @@ emit-caps-multi-proposal :; forge script script/DeployCapsMultiChainProposal.s.s
 deploy-op-ageur-freezing :; forge script script/DeployPolygonAGEURJEURfreeze.s.sol:DeployAGEURPayload --rpc-url polygon -vvvv
 deploy-op-jeur-freezing :; forge script script/DeployPolygonAGEURJEURfreeze.s.sol:DeployJEURPayload --rpc-url polygon -vvvv
 
+# deploy LDO Emission admin payloads
+deploy-arb-ldo-emission-admin :; forge script script/DeployLDOEmissionAdminProposals.s.sol:DeployArbLDOEmissionAdmin --rpc-url arbitrum --broadcast --legacy --private-key ${PRIVATE_KEY} --etherscan-api-key ${ETHERSCAN_API_KEY_ARBITRUM} --verify -vvvv
+deploy-eth-ldo-emission-admin :;forge script script/DeployLDOEmissionAdminProposals.s.sol:DeployEthLDOEmissionAdmin --rpc-url mainnet --broadcast --legacy --private-key ${PRIVATE_KEY} --etherscan-api-key ${ETHERSCAN_API_KEY} --verify -vvvv
+deploy-opt-ldo-emission-admin :; forge script script/DeployLDOEmissionAdminProposals.s.sol:DeployOptLDOEmissionAdmin --rpc-url optimism --broadcast --legacy --private-key ${PRIVATE_KEY} --etherscan-api-key ${ETHERSCAN_API_KEY_OPTIMISM} --verify -vvvv
+
 # Deploy L1 proposal polygon
 deploy-l1-mai-proposal :; forge script script/DeployL1PolygonProposal.s.sol:DeployMai --rpc-url polygon --broadcast --legacy --ledger --mnemonic-indexes ${MNEMONIC_INDEX} --sender ${LEDGER_SENDER} -vvvv
 deploy-l1-ageur-proposal :; forge script script/DeployL1PolygonProposal.s.sol:DeployAGEURFreeze --rpc-url mainnet --broadcast --legacy --ledger --mnemonic-indexes ${MNEMONIC_INDEX} --sender ${LEDGER_SENDER} -vvvv
